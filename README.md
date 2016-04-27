@@ -7,6 +7,21 @@ This is a open source project to get image preview when user upload image file.
 <script type="text/javascript" src="path/to/image-preview.min.js"></script>
 ```
 
+## Browser Support
+- PC
+  - Firefox(Gecko) : 3.6 (1.9.2)
+  - Chrome : 7
+  - Internet Explorer : 10
+  - Opera : 12.02
+  - Safari : 6.0.2
+- Mobile
+  - Firefox Mobile (Gecko) : 32
+  - Android : 3
+  - IE Mobile : 10
+  - Opera Mobile : 11.5
+  - Safari Mobile : 6.1
+- If you want to use in IE version, use polyfill for &lsquo;fileReader API&rsquo;.
+
 ## Options (data-attributes)
 - `data-get-preview` - If you want to use this function, use this data-attribute in &lt;img&gt;, &lt;input&gt;.
 - `data-width` - Purpose for limit image size (width).
