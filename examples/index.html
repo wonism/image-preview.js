@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>image-preview.js</title>
+  <script src="path/to/image-preview.js"></script>
+</head>
+<body>
+<div id="container">
+  <div class="parent">
+    <div>Accept any image files</div>
+    <input type="file" accept="image/*" data-get-preview />
+    <img data-get-preview alt="image preview" src="" />
+  </div>
+  <hr/>
+  <div class="parent">
+    <div>Accept only [png, jpg] image files</div>
+    <input type="file" accept="image/*" data-get-preview="" data-allow-type="[png, jpg]"/>
+    <img data-get-preview alt="image preview" src="" />
+  </div>
+  <hr/>
+  <div class="parent">
+    <div>Accept only 450X450 size image files</div>
+    <input type="file" accept="image/*" data-get-preview="" data-width="450" data-height="450" />
+    <img data-get-preview alt="image preview" src="" />
+  </div>
+</div>
+<script>
+  if (document.addEventListener) {
+    document.addEventListener("DOMContentLoaded", function () {
+      document.removeEventListener("DOMContentLoaded", arguments.callee, false);
+      ready();
+    }, false);
+  } else if (document.attachEvent) {
+    document.attachEvent("onreadystatechange", function () {
+      if (document.readyState === "complete") {
+        document.detachEvent("onreadystatechange", arguments.callee);
+        ready();
+      }
+    });
+  }
+
+  var ready = function () {
+    var afterSuccess = function (obj) {
+      console.log(obj, 'Image is uploaded!');
+    };
+
+    var afterFailed = function (obj) {
+      console.log(obj, 'Failed!');
+    };
+
+    var fileReaders = document.querySelectorAll("input[type='file'][data-get-preview]");
+
+    for (var i = 0; i < fileReaders.length; i++) {
+      if (fileReaders[i].addEventListener) {
+        fileReaders[i].addEventListener("change", function() {
+          getPreview(this, afterSuccess, afterFailed);
+        });
+      } else if (fileReaders[i].attachEvent) {
+        fileReaders[i].attachEvent("onchange", function() {
+          getPreview(this, afterSuccess, afterFailed);
+        });
+      }
+    }
+  }
+</script>
+</body>
+</html>
