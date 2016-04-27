@@ -14,7 +14,7 @@ This is a open source project to get image preview when user upload image file.
 - `data-allow-type` - Purpose for limit image type. example) [type1, type2, type3]
 
 ## Java Script parameters
-- first parameter : this &gt;&gt;
+- first parameter : this (YOU MUST PASS **THIS** **HERE** !!!)
 - second parameter : function that launch after upload image successfully. It can get a object about uploaded file.
 - third parameter : function that launch after failed to upload image. It can get a object about uploaded file and &lsquo;what is wrong&rsquo;.
 
