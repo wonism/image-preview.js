@@ -70,7 +70,7 @@ for (var i = 0; i < fileReaders.length; i++) {
 }
 
 // jQuery
-$('body').on('change', 'input[type="file"][data-get-preview]') {
+$('body').on('change', 'input[type="file"][data-get-preview]', function () {
   getPreview(this, afterSuccess, afterFailed);
 });
 ```
