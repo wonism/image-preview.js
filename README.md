@@ -36,16 +36,21 @@ imagePreview.init(ELEMENT, WIDTH, HEIGHT, RATIO, FILE_TYPE, FILE_SIZE,
   - Input elemenent
 - WIDTH : Number
   - Width restriction (unit : px)
+  - If you use 0, It will **NOT** check width.
 - HEIGHT : Number
   - Height restriction (unit : px)
+  - If you use 0, It will **NOT** check height.
 - RATIO : Number
   - Constrain proportions
+  - If you use 0, It will **NOT** check ratio.
 - FILE_TYPE : String
   - File type restriction
+  - You can use image types for this. ex) jpg(jpeg), png, gif...
 - FILE_SIZE : Number or String with unit
   - Maximum file size
   - If use Number, unit is `bits`
   - If use String, You can set unit like this... `50mb`, `20KB` (it ignores case)
+  - If you use 0, It will **NOT** check file size.
 - CHOOSE_USING_BINARY_FILES : Boolean
   - If you want to get binary files, You have to use TRUE.
   - You can use binary files through 3rd parameter in
